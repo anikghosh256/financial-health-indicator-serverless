@@ -1,0 +1,22 @@
+{
+  "name": "financial-health-indicator-serverless",
+  "version": "1.0.0",
+  "description": "Financial Health Indicator.",  
+  "type": "module",
+  "main": "handler.js",
+  "scripts": {
+    "dev": "nodemon --exec serverless offline",
+    "deploy": "serverless deploy",
+    "remove": "serverless remove"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "prisma": "^5.5.2",
+    "serverless-dotenv-plugin": "^6.0.0",
+    "serverless-offline": "^13.2.1"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.5.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
