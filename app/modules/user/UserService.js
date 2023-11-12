@@ -12,4 +12,13 @@ export default class UserService extends Service {
       },
     });
   }
+
+  async login(email, password) {
+    return this.client.user.findUnique({
+      where: {
+        email,
+        password,
+      },
+    });
+  }
 }

@@ -9,9 +9,17 @@ functions:
   home:
     handler: handler.home
     events:
-      - http:
+      - httpApi:
           path: /
           method: get
+  
+  login:
+    handler: app/modules/user/authenticate/index.login
+    events:
+      - httpApi:
+          path: /login
+          method: post
+
           
   jwt-auth:
     handler: app/modules/authorizer/index.jwtCheck
