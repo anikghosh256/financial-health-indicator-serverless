@@ -22,7 +22,21 @@ export default class User extends Controller {
     try {
       const { email, password } = this.parseData(event.body);
       const user = await this.userService.login(email, password);
-      return this.success({}, 200);
+
+      if (!user) throw new Error('Invalid email or password');
+
+      return this.success(user, 200);
+    } catch (error) {
+      console.log(error);
+      return this.error(error);
+    }
+  }
+
+  async createUser(event, context, callback) {
+    try {
+      const { email, password, name } = this.parseData(event.body);
+      const user = await this.userService.createUser({ email, password, name });
+      return this.success(user, 200);
     } catch (error) {
       return this.error(error);
     }

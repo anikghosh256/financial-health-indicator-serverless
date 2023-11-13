@@ -1,7 +1,7 @@
 {
   "name": "financial-health-indicator-serverless",
   "version": "1.0.0",
-  "description": "Financial Health Indicator.",  
+  "description": "Financial Health Indicator.",
   "type": "module",
   "main": "handler.js",
   "scripts": {
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.5.2",
+    "bcrypt": "^5.1.1",
     "jsonwebtoken": "^9.0.2"
   }
 }

@@ -14,10 +14,17 @@ functions:
           method: get
   
   login:
-    handler: app/modules/user/authenticate/index.login
+    handler: app/modules/user/index.login
     events:
       - httpApi:
           path: /login
+          method: post
+  
+  register:
+    handler: app/modules/user/index.register
+    events:
+      - httpApi:
+          path: /register
           method: post
 
           
